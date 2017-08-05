@@ -1,32 +1,43 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {AppRoutingModule} from './app-routing.module';
 import {StoreModule} from '@ngrx/store';
 import {reducers, initialState} from './reducers';
-//import {EffectsModule} from '@ngrx/effects';
-import { PlayerListComponent } from './player-list/player-list.component';
-import { RingListComponent } from './ring-list/ring-list.component';
+import {RingListComponent} from "./components/ring-list/ring-list.component";
+import {PlayerListComponent} from "./components/player-list/player-list.component";
+import { PlayerPageContainerComponent } from './containers/player-page-container.component';
+import {DataTableModule} from "primeng/primeng";
+import {EffectsModule} from "@ngrx/effects";
+import {PlayerEffects} from "./effects/player-effects";
+import {PageNotFoundComponent} from "./containers/page-not-found";
 
 @NgModule({
   declarations: [
     AppComponent,
+    DataTableModule,
     PlayerListComponent,
-    RingListComponent
+    RingListComponent,
+    PlayerPageContainerComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    // FormsModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     StoreModule.provideStore(reducers, initialState),
-    //EffectsModule.runAfterBootstrap(effects)
+    EffectsModule.runAfterBootstrap(PlayerEffects)
   ],
   providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // constructor(router: Router) {
+  //   console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  // }
+}

@@ -1,37 +1,29 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-// import {FeatureListContainerComponent} from './containers/feature-list/feature-list-container.component';
-// import {EditFeatureContainerComponent} from './containers/edit-feature/edit-feature-container.component';
-// import {FeatureFormIsUnsavedGuard} from './navigation-guards/FeatureFormIsUnsavedGuard';
+import {PlayerPageContainerComponent} from "./containers/player-page-container.component";
+import {PageNotFoundComponent} from "./containers/page-not-found";
 
 const routes: Routes = [
   {
-    // path: 'feature-list',
-    // component: FeatureListContainerComponent,
-    // children: [
-    //   {
-    //     path: ':id/edit',
-    //     component: EditFeatureContainerComponent,
-    //     canDeactivate: [FeatureFormIsUnsavedGuard],
-    //     children: [],
-    //   },
-    //   {
-    //     path: ':id/edit',
-    //     component: EditFeatureContainerComponent,
-    //     children: [],
-    //     outlet: 'korte'
-    //   }
-    //
-    // ]
-
+    path: '',
+    redirectTo: '/player-list',
+    pathMatch: 'full'
+  },
+  {
+    path: 'player-list',
+    component: PlayerPageContainerComponent,
+    children: []
+  },
+  {
+    path:'**',
+    component: PageNotFoundComponent
   }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule],
-  providers: [FeatureFormIsUnsavedGuard]
+  providers: []
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}
