@@ -21,7 +21,8 @@ import {Message, UIChart} from "primeng/primeng";
     <p-column field="moral" header="Luck"></p-column>
   </p-dataTable>
   <br/>
-  <p-chart #chart type="radar" [data]="data"></p-chart>  
+  <p-chart #chart type="radar" width="400" height="400" 
+           [data]="data" [options]="options"></p-chart>  
   `
 })
 export class PlayerPageContainerComponent implements OnInit {
@@ -29,6 +30,8 @@ export class PlayerPageContainerComponent implements OnInit {
   players$: Observable<Player[]>;
 
   data: any;
+  options: any;
+
   selectedPlayer: Player;
   message: Message[];
 
@@ -48,6 +51,11 @@ export class PlayerPageContainerComponent implements OnInit {
           data: [0,0,0,0,0]
         }]
     }
+    this.options = {
+      responsive: false,
+      maintainAspectRatio: false
+    };
+
   }
 
   ngOnInit() {
