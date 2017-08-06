@@ -7,18 +7,16 @@ import {HttpModule} from '@angular/http';
 import {StoreModule} from '@ngrx/store';
 import {reducers, initialState} from './reducers';
 import {RingListComponent} from "./components/ring-list/ring-list.component";
-import {PlayerListComponent} from "./components/player-list/player-list.component";
 import { PlayerPageContainerComponent } from './containers/player-page-container.component';
-import {DataTableModule} from "primeng/primeng";
+import {ChartModule, DataTableModule, GrowlModule, MessagesModule} from "primeng/primeng";
 import {EffectsModule} from "@ngrx/effects";
 import {PlayerEffects} from "./effects/player-effects";
 import {PageNotFoundComponent} from "./containers/page-not-found";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataTableModule,
-    PlayerListComponent,
     RingListComponent,
     PlayerPageContainerComponent,
     PageNotFoundComponent
@@ -28,7 +26,11 @@ import {PageNotFoundComponent} from "./containers/page-not-found";
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    // AppRoutingModule,
+    AppRoutingModule,
+    DataTableModule,
+    ChartModule,
+    MessagesModule,
+    GrowlModule,
     StoreModule.provideStore(reducers, initialState),
     EffectsModule.runAfterBootstrap(PlayerEffects)
   ],
@@ -36,8 +38,4 @@ import {PageNotFoundComponent} from "./containers/page-not-found";
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  // constructor(router: Router) {
-  //   console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
-  // }
-}
+export class AppModule {}

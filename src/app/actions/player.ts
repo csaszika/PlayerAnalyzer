@@ -1,7 +1,7 @@
 import {Action} from "@ngrx/store";
 import {Player} from "../types/player";
 
-export const GET_PLAYERS = 'GET_PLAYER';
+export const GET_PLAYERS = 'GET_PLAYERS';
 export const PLAYERS_LOADED = 'PLAYERS_LOADED';
 export const ADD_PLAYER = 'ADD_PLAYER';
 
