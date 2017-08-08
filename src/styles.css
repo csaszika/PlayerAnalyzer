@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  background: #2c3e50;
+}
+
+.card {
+  border-radius: 2px;
+  background: #34495e;
+  padding: 16px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  box-shadow: 0 0 5px #000;
+}
+
+.ui-widget-content {
+  color: #f1c40f;
+}
+
+.ui-datatable table * {
+  background: transparent !important;
+  text-align: center;
+  border-top-color: #f39c12 !important;
+  border-bottom-color: #f39c12 !important;
+  border-left-width: 0 !important;
+  border-right-width: 0 !important;
+}
+
+.ui-datatable tbody.ui-datatable-hoverable-rows > tr.ui-widget-content:not(.ui-state-highlight):hover {
+  background: #212121;
+  color: #f39c12;
+}
+
+.ui-state-default {
+  color: #e67e22;
+  border: 1px solid #f39c12;
+  background: #f1c40f;
+}
+.ui-datatable thead {
+  color: #e67e22;
+  background: rgba(241, 196, 15,0.2) !important;
+}
+
+.ui-widget-header {
+  border: none;
+  background: transparent;
+}
+
+.ui-paginator .ui-paginator-page.ui-state-active {
+  background: #e67e22;
+  color: #ffffff;
+  border-color: #d35400;
+}
+
+canvas {
+  margin: 0 auto;
+}

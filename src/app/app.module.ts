@@ -7,18 +7,20 @@ import {HttpModule} from '@angular/http';
 import {StoreModule} from '@ngrx/store';
 import {reducers, initialState} from './reducers';
 import {RingListComponent} from "./components/ring-list/ring-list.component";
-import { PlayerPageContainerComponent } from './containers/player-page-container.component';
+import { PlayerPageContainerComponent } from './containers/player-page-container/player-page-container.component';
 import {ChartModule, DataTableModule, GrowlModule, MessagesModule} from "primeng/primeng";
 import {EffectsModule} from "@ngrx/effects";
 import {PlayerEffects} from "./effects/player-effects";
 import {PageNotFoundComponent} from "./containers/page-not-found";
 import {AppRoutingModule} from "./app-routing.module";
+import {RingsPageContainerComponent} from "./containers/rings-page-container";
 
 @NgModule({
   declarations: [
     AppComponent,
     RingListComponent,
     PlayerPageContainerComponent,
+    RingsPageContainerComponent,
     PageNotFoundComponent
   ],
   imports: [

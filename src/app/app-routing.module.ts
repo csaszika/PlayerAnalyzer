@@ -1,7 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {PlayerPageContainerComponent} from "./containers/player-page-container.component";
+import {PlayerPageContainerComponent} from "./containers/player-page-container/player-page-container.component";
 import {PageNotFoundComponent} from "./containers/page-not-found";
+import {RingsPageContainerComponent} from "./containers/rings-page-container";
 
 const routes: Routes = [
   {
@@ -12,6 +13,11 @@ const routes: Routes = [
   {
     path: 'player-list',
     component: PlayerPageContainerComponent,
+    children: []
+  },
+  {
+    path: 'ring-list',
+    component: RingsPageContainerComponent,
     children: []
   },
   {

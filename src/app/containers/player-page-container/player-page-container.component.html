@@ -1,0 +1,22 @@
+<p-growl [value]="message"></p-growl>
+
+<div class="ui-g-12 ui-md-8">
+  <div class="card">
+    <p-dataTable [value]="players$ | async" [rows]="10" [paginator]="true"
+                 selectionMode="single" [(selection)]="selectedPlayer"
+                 (onRowSelect)="onRowSelect($event)">
+      <p-column field="name" header="Name" [sortable]="true"></p-column>
+      <p-column field="speed" header="Speed" [sortable]="true"></p-column>
+      <p-column field="agility" header="Agility" [sortable]="true"></p-column>
+      <p-column field="power" header="Power" [sortable]="true"></p-column>
+      <p-column field="moral" header="Moral" [sortable]="true"></p-column>
+      <p-column field="moral" header="Luck" [sortable]="true"></p-column>
+    </p-dataTable>
+  </div>
+</div>
+<div class="ui-g-12 ui-md-4">
+  <div class="card">
+    <p-chart #chart type="radar" width="400" height="400"
+             [data]="data" [options]="options"></p-chart>
+  </div>
+</div>
