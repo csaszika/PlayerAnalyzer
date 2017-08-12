@@ -1,8 +1,9 @@
 import {Action} from "@ngrx/store";
-import {Player} from "../types/player";
+import {Player, PlayerId} from "../types/player";
 
 export const GET_PLAYERS = 'GET_PLAYERS';
 export const PLAYERS_LOADED = 'PLAYERS_LOADED';
+export const PLAYER_SELECTED = 'PLAYER_SELECTED';
 export const ADD_PLAYER = 'ADD_PLAYER';
 
 export class GetPlayers implements Action {
@@ -16,6 +17,13 @@ export class PlayersLoaded implements Action {
   readonly type = PLAYERS_LOADED;
 
   constructor(public payload: Player[]) {
+  }
+}
+
+export class PlayerSelected implements Action {
+  readonly type = PLAYER_SELECTED;
+
+  constructor(public payload: PlayerId) {
   }
 }
 

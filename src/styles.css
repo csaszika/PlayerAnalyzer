@@ -52,6 +52,19 @@ body {
   border-color: #d35400;
 }
 
+.fc td, .fc th, .fc .fc-button-group>:first-child, .fc .fc-button-group>*, .fc-toolbar button  {
+  background-color: darkred;
+}
+
+.fc-event .fc-content {
+  background-color: darkgreen;
+  color: darkorange;
+}
+
+.fc td.fc-today {
+  color: black;
+}
+
 canvas {
   margin: 0 auto;
 }

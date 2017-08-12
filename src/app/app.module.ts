@@ -8,7 +8,7 @@ import {StoreModule} from '@ngrx/store';
 import {reducers, initialState} from './reducers';
 import {RingListComponent} from "./components/ring-list/ring-list.component";
 import { PlayerPageContainerComponent } from './containers/player-page-container/player-page-container.component';
-import {ChartModule, DataTableModule, GrowlModule, MessagesModule} from "primeng/primeng";
+import {ButtonModule, ChartModule, DataTableModule, GrowlModule, MessagesModule, ScheduleModule} from "primeng/primeng";
 import {EffectsModule} from "@ngrx/effects";
 import {PlayerEffects} from "./effects/player-effects";
 import {PageNotFoundComponent} from "./containers/page-not-found";
@@ -33,6 +33,8 @@ import {RingsPageContainerComponent} from "./containers/rings-page-container";
     ChartModule,
     MessagesModule,
     GrowlModule,
+    ScheduleModule,
+    ButtonModule,
     StoreModule.provideStore(reducers, initialState),
     EffectsModule.runAfterBootstrap(PlayerEffects)
   ],
