@@ -1,24 +1,39 @@
 import * as fromPlayer from './player';
+import * as fromRing from './ring';
 import {environment} from '../../environments/environment';
 import {ActionReducer, combineReducers} from '@ngrx/store';
 import {compose} from '@ngrx/core';
 import {storeFreeze} from 'ngrx-store-freeze';
 import {createSelector} from 'reselect';
 
-export const reducers = { player: fromPlayer.reducer};
+export const reducers = {
+  player: fromPlayer.reducer,
+  ring: fromRing.reducer
+};
 
 export interface State {
   player: fromPlayer.State;
+  ring: fromRing.State;
 }
 
 export const initialState: State = {
-  player: fromPlayer.initialState
+  player: fromPlayer.initialState,
+  ring: fromRing.initialState
 };
+
+//player
 export const getPlayerState = (state: State) => state.player;
 
 export const getPlayerList = createSelector(getPlayerState, fromPlayer.getPlayerList);
 export const getSelectedPlayer = createSelector(getPlayerState, fromPlayer.getSelectedPlayer);
 
+//ring
+export const getRingState = (state: State) => state.ring;
+
+export const getRingList = createSelector(getRingState, fromRing.getRingList);
+export const getSelectedRing = createSelector(getRingState, fromRing.getSelectedRing);
+
+//others
 export const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
 export const productionReducer: ActionReducer<State> = combineReducers(reducers);
 

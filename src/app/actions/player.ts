@@ -34,6 +34,7 @@ export class AddPlayer implements Action {
   }
 }
 
-export type Any = GetPlayers
+export type Actions = GetPlayers
   | PlayersLoaded
-  | AddPlayer;
+  | AddPlayer
+  | PlayerSelected;

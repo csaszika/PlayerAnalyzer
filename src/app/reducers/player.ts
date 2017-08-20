@@ -1,7 +1,7 @@
-import {Action} from '@ngrx/store';
 import {Player, PlayerId} from "../types/player";
 import {PLAYER_SELECTED, PLAYERS_LOADED} from "../actions/player";
 import {createSelector} from "reselect";
+import * as player from '../actions/player';
 
 export interface State {
   playerList: Player[];
@@ -13,7 +13,7 @@ export const initialState: State = {
   selectedId: null
 };
 
-export function reducer (state = initialState, action: Action) {
+export function reducer (state = initialState, action: player.Actions) {
 
   let {playerList, selectedId} = state;
   let changed = false;

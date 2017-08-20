@@ -65,6 +65,26 @@ body {
   color: black;
 }
 
+.ui-datagrid-content {
+  background-color: darkred;
+}
+
+.ring-grid {
+  padding:2rem;
+  background-color:darkred
+}
+
+.ring-grid-image {
+  width: 10rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.ring-grid-element {
+  display: block;
+  margin: 0 auto;
+}
+
 canvas {
   margin: 0 auto;
 }

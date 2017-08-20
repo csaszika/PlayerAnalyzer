@@ -1,24 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {reducers, initialState} from './reducers';
-import {RingListComponent} from "./components/ring-list/ring-list.component";
 import { PlayerPageContainerComponent } from './containers/player-page-container/player-page-container.component';
-import {ButtonModule, ChartModule, DataTableModule, GrowlModule, MessagesModule, ScheduleModule} from "primeng/primeng";
+import {
+  ButtonModule, ChartModule, DataGridModule, DataTableModule, GrowlModule, MessagesModule,
+  ScheduleModule
+} from "primeng/primeng";
 import {EffectsModule} from "@ngrx/effects";
 import {PlayerEffects} from "./effects/player-effects";
 import {PageNotFoundComponent} from "./containers/page-not-found";
 import {AppRoutingModule} from "./app-routing.module";
-import {RingsPageContainerComponent} from "./containers/rings-page-container";
+import {RingsPageContainerComponent} from "./containers/rings-page-container/rings-page-container.component";
+import {RingEffects} from "./effects/ring-effects";
 
 @NgModule({
   declarations: [
     AppComponent,
-    RingListComponent,
     PlayerPageContainerComponent,
     RingsPageContainerComponent,
     PageNotFoundComponent
@@ -35,8 +37,11 @@ import {RingsPageContainerComponent} from "./containers/rings-page-container";
     GrowlModule,
     ScheduleModule,
     ButtonModule,
+    DataGridModule,
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
     StoreModule.provideStore(reducers, initialState),
-    EffectsModule.runAfterBootstrap(PlayerEffects)
+    EffectsModule.run(PlayerEffects),
+    EffectsModule.run(RingEffects)
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

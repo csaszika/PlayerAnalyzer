@@ -1,0 +1,19 @@
+<div>
+  <!--<object type="text/html" data="http://www.nfl.com/photos/09000d5d82618287"-->
+          <!--width="1000px" height="500px">-->
+  <!--</object>-->
+
+</div>
+<p-dataGrid [value]="rings" class="ring-dataGrid">
+  <p-header>All NFL rings</p-header>
+  <ng-template let-ring pTemplate="item">
+    <div class="ui-g-12 ui-md-3 ring-grid">
+      <p-panel [header]="ring.id" class="card ring-grid-element">
+        <img src="assets/nfl/{{ring.path}}" class="ring-grid-image" width="150">
+        <div class="car-detail">{{ring.id}} - {{ring.path}}</div>
+        <hr class="ui-widget-content" style="border-top:0">
+        <i class="fa fa-search" style="cursor:pointer"></i>
+      </p-panel>
+    </div>
+  </ng-template>
+</p-dataGrid>
