@@ -14,7 +14,7 @@ import {GetRings} from "../../actions/ring";
 export class RingsPageContainerComponent implements OnInit {
 
   private rings$: Observable<Ring[]>;
-  private rings: Ring[];
+  rings: Ring[];
 
   constructor(private store: Store<fromRoot.State>, private http: Http) {
     this.rings$ = this.store.select(fromRoot.getRingList);

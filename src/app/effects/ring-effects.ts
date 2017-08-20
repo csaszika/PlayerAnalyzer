@@ -21,12 +21,11 @@ export class RingEffects {
         .map(res => res.json())
         .map(data => {
           let rings = <Ring[]>data['rings'].sort((a, b) => {
-            return a.id < b.id;
+            return b.id - a.id;
           });
           rings.forEach(ring => {
             ring.roman = toRoman(ring.id);
           });
-          console.log('rings',rings);
           this.store.dispatch(new RingsLoaded(rings));
         }));
 
