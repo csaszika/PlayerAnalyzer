@@ -9,10 +9,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "preinstall": "npm install -g @angular-cli"
+    "_preinstall": "npm install -g angular-cli",
+    "_postinstall": "ng build && mv dist/* ."
   },
   "private": true,
   "dependencies": {
+    "angular-cli": "^1.0.0-beta.28.3",
     "@angular/animations": "^4.2.0",
     "@angular/common": "^4.2.0",
     "@angular/compiler": "^4.2.0",
