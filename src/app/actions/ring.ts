@@ -8,16 +8,13 @@ export const RINGS_LOADED = 'RINGS_LOADED';
 export class GetRings implements Action {
   readonly type = GET_RINGS;
 
-  constructor() {
-  }
+  constructor() {}
 }
 
 export class RingsLoaded implements Action {
   readonly type = RINGS_LOADED;
 
-  constructor(public payload: Ring[]) {
-    console.log('payload', payload);
-  }
+  constructor(public payload: Ring[]) {}
 }
 
 export type Actions = GetRings

@@ -2,206 +2,308 @@
   "rings": [
     {
       "id": 1,
-      "path": "1.jpg"
+      "path": "1.jpg",
+      "year": 1966,
+      "winner": "Green Bay Packers"
     },
     {
       "id": 2,
-      "path": "2.jpg"
+      "path": "2.jpg",
+      "year": 1967,
+      "winner": "Green Bay Packers"
     },
     {
       "id": 3,
-      "path": "3.jpg"
+      "path": "3.jpg",
+      "year": 1968,
+      "winner": "New York Jets"
     },
     {
       "id": 4,
-      "path": "4.jpg"
+      "path": "4.jpg",
+      "year": 1969,
+      "winner": "Kansas City Chiefs"
     },
     {
       "id": 5,
-      "path": "5.jpg"
+      "path": "5.jpg",
+      "year": 1970,
+      "winner": "Baltimore Colts"
     },
     {
       "id": 6,
-      "path": "6.jpg"
+      "path": "6.jpg",
+      "year": 1971,
+      "winner": "Dallas Cowboys"
     },
     {
       "id": 7,
-      "path": "7.jpg"
+      "path": "7.jpg",
+      "year": 1972,
+      "winner": "Miami Dolphins"
     },
     {
       "id": 8,
-      "path": "8.jpg"
+      "path": "8.jpg",
+      "year": 1973,
+      "winner": "Miami Dolphins"
     },
     {
       "id": 9,
-      "path": "9.jpg"
+      "path": "9.jpg",
+      "year": 1974,
+      "winner": "Pittsburgh Steelers"
     },
     {
       "id": 10,
-      "path": "10.jpg"
+      "path": "10.jpg",
+      "year": 1975,
+      "winner": "Pittsburgh Steelers"
     },
     {
       "id": 11,
-      "path": "11.jpg"
+      "path": "11.jpg",
+      "year": 1976,
+      "winner": "Oakland Raiders"
     },
     {
       "id": 12,
-      "path": "12.jpg"
+      "path": "12.jpg",
+      "year": 1977,
+      "winner": "Dallas Cowboys"
     },
     {
       "id": 13,
-      "path": "13.jpg"
+      "path": "13.jpg",
+      "year": 1978,
+      "winner": "Pittsburgh Steelers"
     },
     {
       "id": 14,
-      "path": "14.jpg"
+      "path": "14.jpg",
+      "year": 1979,
+      "winner": "Pittsburgh Steelers"
     },
     {
       "id": 15,
-      "path": "15.jpg"
+      "path": "15.jpg",
+      "year": 1980,
+      "winner": "Oakland Raiders"
     },
     {
       "id": 16,
-      "path": "16.jpg"
+      "path": "16.jpg",
+      "year": 1981,
+      "winner": "San Francisco 49ers"
     },
     {
       "id": 17,
-      "path": "17.jpg"
+      "path": "17.jpg",
+      "year": 1982,
+      "winner": "Washington Redskins"
     },
     {
       "id": 18,
-      "path": "18.jpg"
+      "path": "18.jpg",
+      "year": 1983,
+      "winner": "Los Angeles Raiders"
     },
     {
       "id": 19,
-      "path": "19.jpg"
+      "path": "19.jpg",
+      "year": 1984,
+      "winner": "San Francisco 49ers"
     },
     {
       "id": 20,
-      "path": "20.jpg"
+      "path": "20.jpg",
+      "year": 1985,
+      "winner": "Chicago Bears"
     },
     {
       "id": 21,
-      "path": "21.jpg"
+      "path": "21.jpg",
+      "year": 1986,
+      "winner": "New York Giants"
     },
     {
       "id": 22,
-      "path": "22.jpg"
+      "path": "22.jpg",
+      "year": 1987,
+      "winner": "Washington Redskins"
     },
     {
       "id": 23,
-      "path": "23.jpg"
+      "path": "23.jpg",
+      "year": 1988,
+      "winner": "San Francisco 49ers"
     },
     {
       "id": 24,
-      "path": "24.jpg"
+      "path": "24.jpg",
+      "year": 1989,
+      "winner": "San Francisco 49ers"
     },
     {
       "id": 25,
-      "path": "25.jpg"
+      "path": "25.jpg",
+      "year": 1990,
+      "winner": "New York Giants"
     },
     {
       "id": 26,
-      "path": "26.jpg"
+      "path": "26.jpg",
+      "year": 1991,
+      "winner": "Washington Redskins"
     },
     {
       "id": 27,
-      "path": "27.jpg"
+      "path": "27.jpg",
+      "year": 1992,
+      "winner": "Dallas Cowboys"
     },
     {
       "id": 28,
-      "path": "28.jpg"
+      "path": "28.jpg",
+      "year": 1993,
+      "winner": "Dallas Cowboys"
     },
     {
       "id": 29,
-      "path": "29.jpg"
+      "path": "29.jpg",
+      "year": 1994,
+      "winner": "San Francisco 49ers"
     },
     {
       "id": 30,
-      "path": "30.jpg"
+      "path": "30.jpg",
+      "year": 1995,
+      "winner": "Dallas Cowboys"
     },
     {
       "id": 31,
-      "path": "31.jpg"
+      "path": "31.jpg",
+      "year": 1996,
+      "winner": "Green Bay Packers"
     },
     {
       "id": 32,
-      "path": "32.jpg"
+      "path": "32.jpg",
+      "year": 1997,
+      "winner": "Denver Broncos"
     },
     {
       "id": 33,
-      "path": "33.jpg"
+      "path": "33.jpg",
+      "year": 1998,
+      "winner": "Denver Broncos"
     },
     {
       "id": 34,
-      "path": "34.jpg"
+      "path": "34.jpg",
+      "year": 1999,
+      "winner": "St. Louis Rams"
     },
     {
       "id": 35,
-      "path": "35.jpg"
+      "path": "35.jpg",
+      "year": 2000,
+      "winner": "Baltimore Ravens"
     },
     {
       "id": 36,
-      "path": "36.jpg"
+      "path": "36.jpg",
+      "year": 2001,
+      "winner": "New England Patriots"
     },
     {
       "id": 37,
-      "path": "37.jpg"
+      "path": "37.jpg",
+      "year": 2002,
+      "winner": "Tampa Bay Buccaneers"
     },
     {
       "id": 38,
-      "path": "38.jpg"
+      "path": "38.jpg",
+      "year": 2003,
+      "winner": "New England Patriots"
     },
     {
       "id": 39,
-      "path": "39.jpg"
+      "path": "39.jpg",
+      "year": 2004,
+      "winner": "New England Patriots"
     },
     {
       "id": 40,
-      "path": "40.jpg"
+      "path": "40.jpg",
+      "year": 2005,
+      "winner": "Pittsburgh Steelers"
     },
     {
       "id": 41,
-      "path": "41.jpg"
+      "path": "41.jpg",
+      "year": 2006,
+      "winner": "Indianapolis Colts"
     },
     {
       "id": 42,
-      "path": "42.jpg"
+      "path": "42.jpg",
+      "year": 2007,
+      "winner": "New York Giants"
     },
     {
       "id": 43,
-      "path": "43.jpg"
+      "path": "43.jpg",
+      "year": 2008,
+      "winner": "Pittsburgh Steelers"
     },
     {
       "id": 44,
-      "path": "44.jpg"
+      "path": "44.jpg",
+      "year": 2009,
+      "winner": "New Orleans Saints"
     },
     {
       "id": 45,
-      "path": "45.jpg"
+      "path": "45.jpg",
+      "year": 2010,
+      "winner": "Green Bay Packers"
     },
     {
       "id": 46,
-      "path": "46.jpg"
+      "path": "46.jpg",
+      "year": 2011,
+      "winner": "New York Giants"
     },
     {
       "id": 47,
-      "path": "47.jpg"
+      "path": "47.jpg",
+      "year": 2012,
+      "winner": "Baltimore Ravens"
     },
     {
       "id": 48,
-      "path": "48.jpg"
+      "path": "48.jpg",
+      "year": 2013,
+      "winner": "Seattle Seahawks"
     },
     {
       "id": 49,
-      "path": "49.jpg"
+      "path": "49.jpg",
+      "year": 2014,
+      "winner": "New England Patriots"
     },
     {
       "id": 50,
-      "path": "50.jpg"
+      "path": "50.jpg",
+      "year": 2015,
+      "winner": "Denver Broncos"
     },
     {
       "id": 51,
-      "path": "51.jpg"
+      "path": "51.jpg",
+      "year": 2016,
+      "winner": "New England Patriots"
     }]
 }
