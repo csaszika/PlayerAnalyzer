@@ -13,7 +13,7 @@ export const initialState: State = {
   selectedId: null
 };
 
-export function reducer (state = initialState, action: ring.Actions) {
+export function reducer (state = initialState, action: ring.Actions) : State {
 
   let {ringList, selectedId} = state;
   let changed = false;

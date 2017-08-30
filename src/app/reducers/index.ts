@@ -6,11 +6,6 @@ import {compose} from '@ngrx/core';
 import {storeFreeze} from 'ngrx-store-freeze';
 import {createSelector} from 'reselect';
 
-export const reducers = {
-  player: fromPlayer.reducer,
-  ring: fromRing.reducer
-};
-
 export interface State {
   player: fromPlayer.State;
   ring: fromRing.State;
@@ -34,6 +29,7 @@ export const getRingList = createSelector(getRingState, fromRing.getRingList);
 export const getSelectedRing = createSelector(getRingState, fromRing.getSelectedRing);
 
 //others
+export const reducers = { player: fromPlayer.reducer, ring: fromRing.reducer};
 export const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
 export const productionReducer: ActionReducer<State> = combineReducers(reducers);
 

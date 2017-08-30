@@ -26,7 +26,7 @@ export class RingEffects {
           rings.forEach(ring => {
             ring.roman = toRoman(ring.id);
           });
-          this.store.dispatch(new RingsLoaded(rings));
+          return new RingsLoaded(rings);
         }));
 
   constructor(private actions$: Actions, private http: Http, private store: Store<fromRoot.State>) {

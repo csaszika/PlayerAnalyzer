@@ -13,7 +13,7 @@ export const initialState: State = {
   selectedId: null
 };
 
-export function reducer (state = initialState, action: player.Actions) {
+export function reducer (state = initialState, action: player.Actions) : State {
 
   let {playerList, selectedId} = state;
   let changed = false;
