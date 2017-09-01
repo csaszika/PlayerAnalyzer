@@ -12,7 +12,7 @@
     "heroku-postbuild": "ng build --aot -prod",
     "deploy": "git push origin master && git push heroku master",
     "preinstall":   "npm install -g http-server",
-    "postinstall":  "ng build && mv dist/*."
+    "postinstall":  "ng build && mv dist/"
   },
   "private": true,
   "dependencies": {
