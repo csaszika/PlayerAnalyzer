@@ -23,6 +23,7 @@ export function reducer (state = initialState, action: player.Actions) : State {
       const players = action.payload as Player[];
       playerList = players;
       changed = true;
+      break;
     case PLAYER_SELECTED:
       selectedId = action.payload as PlayerId;
       changed = true;

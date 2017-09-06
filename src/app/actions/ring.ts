@@ -8,7 +8,7 @@ export const RINGS_LOADED = 'RINGS_LOADED';
 export class GetRings implements Action {
   readonly type = GET_RINGS;
 
-  constructor() {}
+  constructor(public payload: any = null) {}
 }
 
 export class RingsLoaded implements Action {
