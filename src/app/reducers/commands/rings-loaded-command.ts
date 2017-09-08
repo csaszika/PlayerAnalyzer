@@ -1,23 +1,19 @@
 import {Command} from "./command";
-import {Injectable} from "@angular/core";
 import {State} from "../ring";
 import {Ring} from "../../types/ring";
 
-@Injectable()
 export class RingsLoadedCommand implements Command {
 
-  execute(state: State, payload: any): any {
+  execute(state: State, payload: any): State {
 
-    let {ringList, selectedId} = state;
-    let changed = false;
+    // let {ringList, selectedId} = state;
+    //
+    // ringList = payload as Ring[];
+    //
+    // return {ringList, selectedId};
 
-    ringList = payload as Ring[];
-    changed = true;
-
-    return {state: {ringList: ringList, selectedId: selectedId}, changed: changed};
-
-    // state.ringList = payload as Ring[];
-    // changed = true;
-    // return {state: state, changed: changed};
+    state = Object.assign({}, state);
+    state.ringList = payload as Ring[];
+    return state;
   }
 }

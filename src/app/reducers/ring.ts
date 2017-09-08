@@ -16,15 +16,8 @@ export const initialState: State = {
 
 export function reducer (state = initialState, action: ring.Actions) : State {
 
-  let {ringList, selectedId} = state;
-  let changed = false;
-
-  let command = CommandFactory.getCommand(action);
-
-  if (command) {
-    let result = command.execute(state, action.payload);
-    return result.changed ? result.state : state;
-  }
+  // let {ringList, selectedId} = state;
+  // let changed = false;
 
   // switch (action.type) {
   //   case RINGS_LOADED:
@@ -32,8 +25,10 @@ export function reducer (state = initialState, action: ring.Actions) : State {
   //     ringList = rings;
   //     changed = true;
   // }
+  let command = CommandFactory.getCommand(action);
 
-  return state;
+  return command.execute(state, action.payload);
+
 }
 
 export const getRingList = (state: State) => state.ringList;
