@@ -9,7 +9,7 @@ export const ADD_PLAYER = 'ADD_PLAYER';
 export class GetPlayers implements Action {
   readonly type = GET_PLAYERS;
 
-  constructor() {}
+  constructor(public payload: any = null) {}
 }
 
 export class PlayersLoaded implements Action {
