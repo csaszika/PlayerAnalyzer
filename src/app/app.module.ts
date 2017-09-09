@@ -17,6 +17,7 @@ import {PageNotFoundComponent} from "./containers/page-not-found";
 import {AppRoutingModule} from "./app-routing.module";
 import {RingsPageContainerComponent} from "./containers/rings-page-container/rings-page-container.component";
 import {RingEffects} from "./effects/ring-effects";
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -38,10 +39,9 @@ import {RingEffects} from "./effects/ring-effects";
     ScheduleModule,
     ButtonModule,
     DataGridModule,
-    StoreDevtoolsModule.instrumentOnlyWithExtension(),
-    StoreModule.provideStore(reducers, initialState),
-    EffectsModule.run(PlayerEffects),
-    EffectsModule.run(RingEffects)
+    !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
+    StoreModule.forRoot(reducers, {initialState}),
+    EffectsModule.forRoot([PlayerEffects, RingEffects]),
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

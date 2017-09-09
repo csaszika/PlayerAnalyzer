@@ -1,7 +1,7 @@
 import {Player, PlayerId} from "../types/player";
 import {PLAYER_SELECTED, PLAYERS_LOADED} from "../actions/player";
 import {createSelector} from "reselect";
-import * as player from '../actions/index';
+import * as player from '../actions/player';
 import {Actions, UPDATE_RING_AND_PLAYER} from "../actions/index";
 
 export interface State {

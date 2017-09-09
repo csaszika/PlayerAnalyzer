@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Actions, Effect, toPayload} from '@ngrx/effects';
+import {Actions, Effect} from '@ngrx/effects';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/delay';
 import {GET_PLAYERS, PlayersLoaded} from "../actions/player";

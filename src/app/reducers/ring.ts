@@ -1,5 +1,4 @@
 import {Ring, RingId} from "../types/ring";
-import {RINGS_LOADED} from "../actions/ring";
 import {createSelector} from "reselect";
 import * as ring from '../actions/ring';
 import {CommandFactory} from "./commands/command-factory";

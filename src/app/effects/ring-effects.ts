@@ -7,8 +7,6 @@ import {GET_RINGS, RingsLoaded} from "../actions/ring";
 import {Http} from "@angular/http";
 import {Ring} from "../types/ring";
 import {toRoman} from 'roman-numerals';
-import {Store} from "@ngrx/store";
-import * as fromRoot from '../reducers';
 
 @Injectable()
 export class RingEffects {
@@ -29,7 +27,7 @@ export class RingEffects {
           return new RingsLoaded(rings);
         }));
 
-  constructor(private actions$: Actions, private http: Http, private store: Store<fromRoot.State>) {
+  constructor(private actions$: Actions, private http: Http) {
   }
 }
 
