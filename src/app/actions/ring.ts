@@ -1,5 +1,4 @@
 import {Action} from "@ngrx/store";
-import {Player, PlayerId} from "../types/player";
 import {Ring} from "../types/ring";
 
 export const GET_RINGS = 'GET_RINGS';

@@ -85,6 +85,16 @@ body {
   margin: 0 auto;
 }
 
+.user-editor {
+  color: darkorange;
+  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif;
+  padding-top: 3rem;
+}
+
+.user-editor-row {
+  padding-bottom: 1rem;
+}
+
 canvas {
   margin: 0 auto;
 }

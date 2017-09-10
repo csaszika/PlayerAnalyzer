@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="ui-g">
+    <div class="ui-g-6">
+      <p-dataTable [value]="users$ | async" selectionMode="single"
+                   [(selection)]="selectedUser"
+                   (onRowSelect)="onRowSelect($event)"
+                   [paginator]="true" rows="15" [responsive]="true">
+        <p-header>Users</p-header>
+
+        <p-column field="sso" header="SSO" [sortable]="true"></p-column>
+        <p-column field="userName" header="Username" [sortable]="true"></p-column>
+        <p-column field="age" header="Age" [sortable]="true"></p-column>
+
+        <p-footer>
+          <div class="ui-helper-clearfix" style="width:100%">
+            <button type="button" pButton icon="fa-plus"
+                    style="float:left" (click)="showDialogToAdd()" label="Add">
+            </button>
+          </div>
+        </p-footer>
+      </p-dataTable>
+    </div>
+
+    <div class="ui-g-6 user-editor">
+      <app-user-edit *ngIf="!!selectedUser"
+                     [selectedUser]="selectedUser"
+                     [saveButtonEnabled]="saveButtonEnabled"
+                     (userChanges)="onUserChange($event)"
+                     (save)="onSave($event)"></app-user-edit>
+    </div>
+  </div>
+
+
+  <p-dialog header="User Details" [(visible)]="showDialog" [responsive]="true" showEffect="fade" [modal]="true">
+    <div class="ui-grid ui-grid-responsive ui-fluid">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-4"><label for="userName">Username</label></div>
+        <div class="ui-grid-col-8"><input pInputText id="userName" [(ngModel)]="newUser.userName" /></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-4"><label for="sso" class="input-label">SSO</label></div>
+        <div class="ui-grid-col-8"><input pInputText id="sso" [(ngModel)]="newUser.sso" /></div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-4"><label for="age" class="input-label">Age</label></div>
+        <div class="ui-grid-col-8"><input pInputText id="age" [(ngModel)]="newUser.age" /></div>
+      </div>
+    </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+      </div>
+    </p-footer>
+  </p-dialog>
+
+</div>

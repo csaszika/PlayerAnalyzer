@@ -1,0 +1,31 @@
+<form [formGroup]="form">
+  <div class="ui-grid ui-grid-responsive ui-fluid">
+    <div class="ui-grid-row user-editor-row">
+      <div class="ui-grid-col-4"><label for="userNameEdit">Username</label></div>
+      <div class="ui-grid-col-8">
+        <input pInputText id="userNameEdit"
+               [(ngModel)]="selectedUser.userName"
+               formControlName="userName"/>
+      </div>
+    </div>
+    <div class="ui-grid-row user-editor-row">
+      <div class="ui-grid-col-4"><label for="ssoEdit">SSO</label></div>
+      <div class="ui-grid-col-8">
+        <input pInputText="" id="ssoEdit"
+               [(ngModel)]="selectedUser.sso"
+               formControlName="sso" />
+      </div>
+    </div>
+    <div class="ui-grid-row user-editor-row">
+      <div class="ui-grid-col-4"><label for="ageEdit">Age</label></div>
+      <div class="ui-grid-col-8">
+        <input pInputText id="ageEdit"
+               [(ngModel)]="selectedUser.age"
+               formControlName="age" />
+      </div>
+    </div>
+    <button type="button" pButton (click)="onSave()"
+            label="Save" style="float:left; width: auto"
+            [disabled]="!saveButtonEnabled"></button>
+  </div>
+</form>
