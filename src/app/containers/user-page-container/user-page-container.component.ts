@@ -5,9 +5,11 @@ import * as fromRoot from '../../reducers';
 import {User} from "../../types/user";
 import {AddUser, GetUsers, UpdateEditedUser, UserSelected} from "../../actions/user";
 
+import * as template from './user-page-container.component';
+
 @Component({
   selector: 'app-user-page-container',
-  templateUrl: './user-page-container.component.html',
+  template: `${template}`,
   styleUrls: ['./user-page-container.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

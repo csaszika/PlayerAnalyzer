@@ -3,9 +3,11 @@ import {User} from "../../types/user";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Observable} from "rxjs/Observable";
 
+import * as template from './user-edit.component';
+
 @Component({
   selector: 'app-user-edit',
-  templateUrl: './user-edit.component.html',
+  template: `${template}`,
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnChanges {
