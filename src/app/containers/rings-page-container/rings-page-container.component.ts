@@ -6,11 +6,9 @@ import {Ring} from "../../types/ring";
 import {Observable} from "rxjs/Observable";
 import {GetRings} from "../../actions/ring";
 
-import * as template from './rings-page-container.component';
-
 @Component({
   selector: 'app-rings-page-container',
-  template: `${template}`,
+  templateUrl: './rings-page-container.component.html',
   styleUrls: ['./rings-page-container.component.css']
 })
 export class RingsPageContainerComponent implements OnInit {

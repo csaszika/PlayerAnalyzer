@@ -6,11 +6,9 @@ import * as fromRoot from '../../reducers';
 import {GetPlayers, PlayerSelected} from '../../actions/player';
 import {Message} from 'primeng/primeng';
 
-import * as template from './player-page-container.component';
-
 @Component({
   selector: 'app-player-page-container',
-  template: `${template}`
+  templateUrl: './player-page-container.component.html'
 })
 export class PlayerPageContainerComponent implements OnInit {
 

@@ -7,7 +7,8 @@ import * as template from './user-edit.component';
 
 @Component({
   selector: 'app-user-edit',
-  template: `${template}`,
+  // template: `${template}`,
+  templateUrl: './user-edit.component.html',
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnChanges {
