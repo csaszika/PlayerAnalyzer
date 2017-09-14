@@ -8,8 +8,7 @@ import {GetRings} from "../../actions/ring";
 
 @Component({
   selector: 'app-rings-page-container',
-  templateUrl: './rings-page-container.component.html',
-  styleUrls: ['./rings-page-container.component.css']
+  templateUrl: './rings-page-container.component.html'
 })
 export class RingsPageContainerComponent implements OnInit {
 

@@ -1,11 +1,13 @@
 import {Action} from "@ngrx/store";
-import {User} from "../types/user";
+import {User, UserId} from "../types/user";
+import {UsersLoadedCommand} from "../reducers/commands/user/users-loaded-command";
 
 export const GET_USERS = 'GET_USERS';
 export const USERS_LOADED = 'USERS_LOADED';
 export const USER_SELECTED = 'USER_SELECTED';
 export const UPDATE_EDITED_USER = 'UPDATE_EDITED_USER';
 export const ADD_USER = 'ADD_USER';
+export const DELETE_USER = 'DELETE_USER';
 
 export class GetUsers implements Action {
   readonly type = GET_USERS;
@@ -34,7 +36,13 @@ export class UpdateEditedUser implements Action {
 export class AddUser implements Action {
   readonly type = ADD_USER;
 
-  constructor(public payload: User) {}
+  constructor(public payload: UserId) {}
+}
+
+export class DeleteUser implements Action {
+  readonly type = DELETE_USER;
+
+  constructor(public payload: UserId) {}
 }
 
 export type Actions = GetUsers

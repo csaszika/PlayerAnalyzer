@@ -8,7 +8,6 @@ import {AddUser, GetUsers, UpdateEditedUser, UserSelected} from "../../actions/u
 @Component({
   selector: 'app-user-page-container',
   templateUrl: './user-page-container.component.html',
-  styleUrls: ['./user-page-container.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserPageContainerComponent implements OnInit {
