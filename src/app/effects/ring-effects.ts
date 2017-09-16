@@ -3,10 +3,11 @@ import {Actions, Effect} from '@ngrx/effects';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/delay';
-import {GET_RINGS, RingsLoaded} from "../actions/ring";
+import {RingsLoaded} from "../actions/ring/ring";
 import {Http} from "@angular/http";
 import {Ring} from "../types/ring";
 import {toRoman} from 'roman-numerals';
+import {GET_RINGS} from "../actions/ring/ring-action-types";
 
 @Injectable()
 export class RingEffects {

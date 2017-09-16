@@ -5,8 +5,9 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/delay';
 import {Http} from "@angular/http";
 import {toRoman} from 'roman-numerals';
-import {GET_USERS, UsersLoaded} from "../actions/user";
+import {UsersLoaded} from "../actions/user/user";
 import {User} from "../types/user";
+import {GET_USERS} from "../actions/user/user-action-types";
 
 @Injectable()
 export class UserEffects {

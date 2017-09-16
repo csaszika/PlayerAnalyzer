@@ -1,7 +1,7 @@
 import {User} from "../types/user";
-import * as user from '../actions/user';
-import {} from "./commands/factories/ring-command-factory";
-import {UserCommandFactory} from "./commands/factories/user-command-factory";
+import * as user from '../actions/user/user';
+import {} from "./commands/factories/group-factories/ring-group-command-factory";
+import {UserGroupCommandFactory} from "./commands/factories/group-factories/user-group-command-factory";
 
 export interface State {
   userList: User[];
@@ -17,7 +17,7 @@ export const initialState: State = {
 
 export function reducer (state = initialState, action: user.Actions) : State {
 
-  let command = UserCommandFactory.getCommand(action);
+  let command = UserGroupCommandFactory.getCommand(action);
   return command.execute(state, action.payload);
 }
 

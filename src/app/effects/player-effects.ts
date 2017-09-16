@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect} from '@ngrx/effects';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/delay';
-import {GET_PLAYERS, PlayersLoaded} from "../actions/player";
+import {PlayersLoaded} from "../actions/player/player";
+import {GET_PLAYERS} from "../actions/player/player-action-types";
 
 @Injectable()
 export class PlayerEffects {

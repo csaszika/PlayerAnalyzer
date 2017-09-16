@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {Store} from "@ngrx/store";
 import * as fromRoot from '../../reducers';
 import {User} from "../../types/user";
-import {AddUser, GetUsers, UpdateEditedUser, UserSelected} from "../../actions/user";
+import {GetUsers, UpdateEditedUser, UserSelected} from "../../actions/user/user";
 
 @Component({
   selector: 'app-user-page-container',

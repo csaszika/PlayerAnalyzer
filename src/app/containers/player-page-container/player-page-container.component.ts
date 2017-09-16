@@ -3,7 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import {Player} from '../../types/player';
 import {Store} from '@ngrx/store';
 import * as fromRoot from '../../reducers';
-import {GetPlayers, PlayerSelected} from '../../actions/player';
+import {GetPlayers, PlayerSelected} from '../../actions/player/player';
 import {Message} from 'primeng/primeng';
 
 @Component({
@@ -14,7 +14,7 @@ export class PlayerPageContainerComponent implements OnInit {
 
   players$: Observable<Player[]>;
 
-  currentDate: number = Date.now()
+  currentDate: number = Date.now();
 
   data: any;
   options: any;

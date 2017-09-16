@@ -1,8 +1,7 @@
 import {Player, PlayerId} from "../types/player";
-import {PLAYER_SELECTED, PLAYERS_LOADED} from "../actions/player";
 import {createSelector} from "reselect";
-import * as player from '../actions/player';
-import {Actions, UPDATE_RING_AND_PLAYER} from "../actions/index";
+import * as player from '../actions/player/player';
+import {PLAYER_SELECTED, PLAYERS_LOADED} from "../actions/player/player-action-types";
 
 export interface State {
   playerList: Player[];
@@ -14,7 +13,12 @@ export const initialState: State = {
   selectedId: null
 };
 
-export function reducer (state = initialState, action: Actions) : State {
+/**
+ * This is the old version of Action handling. The issue is that
+ * the switch case statement can be too big and then hardly readable.
+ * To avoid this issue see the solution in 'user' reducer.
+ */
+export function reducer (state = initialState, action: player.Actions) : State {
 
   let {playerList, selectedId} = state;
   let changed = false;
@@ -28,9 +32,6 @@ export function reducer (state = initialState, action: Actions) : State {
     case PLAYER_SELECTED:
       selectedId = action.payload as PlayerId;
       changed = true;
-      break;
-    case UPDATE_RING_AND_PLAYER:
-      //we can use this action type in other reducers
       break;
   }
 

@@ -1,0 +1,4 @@
+export const GET_PLAYERS = 'GET_PLAYERS';
+export const PLAYERS_LOADED = 'PLAYERS_LOADED';
+export const PLAYER_SELECTED = 'PLAYER_SELECTED';
+export const ADD_PLAYER = 'ADD_PLAYER';

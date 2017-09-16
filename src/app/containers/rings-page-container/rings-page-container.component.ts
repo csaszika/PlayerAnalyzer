@@ -4,7 +4,7 @@ import * as fromRoot from '../../reducers';
 import {Http} from "@angular/http";
 import {Ring} from "../../types/ring";
 import {Observable} from "rxjs/Observable";
-import {GetRings} from "../../actions/ring";
+import {GetRings} from "../../actions/ring/ring";
 
 @Component({
   selector: 'app-rings-page-container',
