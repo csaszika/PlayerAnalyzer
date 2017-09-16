@@ -7,6 +7,10 @@ import {SelectedUserModificationCommandFactory} from "../type-factories/user/sel
 import {EditedUserListModificationCommandFactory} from "../type-factories/user/edited-user-list-modification-command-factory";
 import {ComplexUserModificationCommandFactory} from "../type-factories/user/complex-user-modification-command-factory";
 
+/**
+ * First level to find command class.
+ * Filtering by groupType which is an enum.
+ */
 export class UserGroupCommandFactory {
 
   static getCommand (action: UserActionWithGroupType) : UserCommand {

@@ -6,6 +6,11 @@ import {AddUserCommand} from "../../../user/add-user-command";
 import {DefaultUserCommand} from "../../../user/default-user-command";
 import {DeleteUserCommand} from "../../../user/delete-user-command";
 
+/**
+ * Second level to find command class.
+ * We find here the concrete command classes which has execute method.
+ * The State changer logic is found in execute method.
+ */
 export class UserListModificationCommandFactory {
 
   static getCommand (action: UserActionWithGroupType) : UserCommand {

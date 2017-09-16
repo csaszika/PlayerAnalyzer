@@ -30,7 +30,7 @@ export const getRingState = (state: State) => state.ring;
 export const getRingList = createSelector(getRingState, fromRing.getRingList);
 export const getSelectedRing = createSelector(getRingState, fromRing.getSelectedRing);
 
-//newUser
+//user
 export const getUserState = (state: State) => state.user;
 
 export const getUserList = createSelector(getUserState, fromUser.getUserList);
