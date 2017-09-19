@@ -40,8 +40,3 @@ export function reducer (state = initialState, action: player.Actions) : State {
     selectedId: selectedId
   } : state;
 }
-
-export const getPlayerList = (state: State) => state.playerList;
-export const getSelectedPlayerId = (state: State) => state.selectedId;
-export const getSelectedPlayer = createSelector(getPlayerList, getSelectedPlayerId,
-  (playerList, selectedId) => playerList.find((player) => player.id === selectedId));

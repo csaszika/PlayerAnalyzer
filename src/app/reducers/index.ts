@@ -21,21 +21,28 @@ export const initialState: State = {
 //player
 export const getPlayerState = (state: State) => state.player;
 
-export const getPlayerList = createSelector(getPlayerState, fromPlayer.getPlayerList);
-export const getSelectedPlayer = createSelector(getPlayerState, fromPlayer.getSelectedPlayer);
+// export const getPlayerList = createSelector(getPlayerState, fromPlayer.getPlayerList);
+// export const getSelectedPlayer = createSelector(getPlayerState, fromPlayer.getSelectedPlayer);
+export const getPlayerList = (state: State) => state.player.playerList;
+export const getSelectedPlayerId = (state: State) => state.player.selectedId;
+export const getSelectedPlayer = createSelector(getPlayerList, getSelectedPlayerId,
+  (playerList, selectedId) => playerList.find((player) => player.id === selectedId));
+
 
 //ring
 export const getRingState = (state: State) => state.ring;
 
-export const getRingList = createSelector(getRingState, fromRing.getRingList);
-export const getSelectedRing = createSelector(getRingState, fromRing.getSelectedRing);
+export const getRingList = (state: State) => state.ring.ringList;
+export const getSelectedRingId = (state: State) => state.ring.selectedId;
+export const getSelectedRing = createSelector(getRingList,getSelectedRingId,
+  (ringList, selectedId) => ringList.find((ring) => ring.id === selectedId));
 
 //user
 export const getUserState = (state: State) => state.user;
 
-export const getUserList = createSelector(getUserState, fromUser.getUserList);
-export const getSelectedUser = createSelector(getUserState, fromUser.getSelectedUser);
-export const getEditedUser = createSelector(getUserState, fromUser.getEditedUser);
+export const getUserList = (state: State) => state.user.userList;
+export const getSelectedUser = (state: State) => state.user.selected;
+export const getEditedUser = (state: State) => state.user.edited;
 
 //others
 export const reducers: ActionReducerMap<State> = {
