@@ -3,11 +3,8 @@ import {User} from "../../types/user";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Observable} from "rxjs/Observable";
 
-import * as template from './user-edit.component';
-
 @Component({
   selector: 'app-user-edit',
-  // template: `${template}`,
   templateUrl: './user-edit.component.html'
 })
 export class UserEditComponent implements OnChanges {
@@ -24,6 +21,7 @@ export class UserEditComponent implements OnChanges {
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
+      id: '',
       userName: ['x', Validators.minLength(3)],
       sso: ['', Validators.minLength(9)],
       age: ''});

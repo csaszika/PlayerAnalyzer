@@ -42,7 +42,6 @@ export const getUserState = (state: State) => state.user;
 
 export const getUserList = (state: State) => state.user.userList;
 export const getSelectedUser = (state: State) => state.user.selected;
-export const getEditedUser = (state: State) => state.user.edited;
 
 //others
 export const reducers: ActionReducerMap<State> = {

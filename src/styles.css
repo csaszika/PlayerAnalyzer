@@ -17,6 +17,10 @@ body {
   color: #f1c40f;
 }
 
+.ui-datatable-header.ui-widget-header {
+  color: darkorange;
+}
+
 .ui-datatable table * {
   background: transparent !important;
   text-align: center;
@@ -87,8 +91,14 @@ body {
 
 .user-editor {
   color: darkorange;
-  font-family: "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif;
-  padding-top: 3rem;
+  margin-top: 35px;
+}
+
+.user-editor-row input {
+  border: none;
+  border-bottom: 1px solid darkorange;
+  color: #fff;
+  background: transparent;
 }
 
 .user-editor-row {

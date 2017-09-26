@@ -6,13 +6,11 @@ import {UserGroupCommandFactory} from "./commands/factories/group-factories/user
 export interface State {
   userList: User[];
   selected: User;
-  edited: User;
 }
 
 export const initialState: State = {
   userList: [],
-  selected: null,
-  edited: null
+  selected: null
 };
 
 /**

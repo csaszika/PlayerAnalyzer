@@ -3,7 +3,7 @@ import {Observable} from "rxjs/Observable";
 import {Store} from "@ngrx/store";
 import * as fromRoot from '../../reducers';
 import {User} from "../../types/user";
-import {GetUsers, UpdateEditedUser, UserSelected} from "../../actions/user/user";
+import {GetUsers, UserSelected} from "../../actions/user/user";
 
 @Component({
   selector: 'app-user-page-container',
@@ -20,11 +20,6 @@ export class UserPageContainerComponent implements OnInit {
 
   constructor(private store: Store<fromRoot.State>) {
     this.users$ = this.store.select(fromRoot.getUserList);
-    this.store.select(fromRoot.getEditedUser)
-      .subscribe((editedUser) => {
-      //equality is not working -> find solution
-        this.saveButtonEnabled = (editedUser != this.selectedUser);
-      })
   }
 
   ngOnInit() {
@@ -49,6 +44,6 @@ export class UserPageContainerComponent implements OnInit {
   }
 
   onUserChange(user: User) {
-    this.store.dispatch(new UpdateEditedUser(user));
+    // this.store.dispatch(new UpdateEditedUser(user));
   }
 }
