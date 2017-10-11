@@ -4,6 +4,8 @@ import {Store} from "@ngrx/store";
 import * as fromRoot from '../../reducers';
 import {User} from "../../types/user";
 import {GetUsers, UserSelected} from "../../actions/user/user";
+import {Child} from "../../types/child";
+import {GetChildren} from "../../actions/child/child";
 
 @Component({
   selector: 'app-user-page-container',
@@ -17,13 +19,21 @@ export class UserPageContainerComponent implements OnInit {
   newUser: User = {id: null, userName: '', sso: '', age: null};
   selectedUser: User;
   users$: Observable<User[]>;
+  childList$: Observable<Child[]>;
 
   constructor(private store: Store<fromRoot.State>) {
     this.users$ = this.store.select(fromRoot.getUserList);
+    this.childList$ = this.store.select(fromRoot.GetChildList)
   }
 
   ngOnInit() {
-    this.store.dispatch(new GetUsers());
+    this.store.select(fromRoot.getSelectedUser)
+      .subscribe((user) => {
+      if(user !== undefined) {
+        this.store.dispatch(new GetChildren(this.selectedUser));
+      }
+      });
+
     this.saveButtonEnabled = false;
     this.selectedUser = null;
   }
@@ -40,6 +50,8 @@ export class UserPageContainerComponent implements OnInit {
   }
 
   onRowSelect(event) {
+    //a solution to modify child and user state, I think we can do it in one thread
+    // this.store.dispatch(new GetChildren(this.selectedUser.id));
     this.store.dispatch(new UserSelected(this.selectedUser));
   }
 

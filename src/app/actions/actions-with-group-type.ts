@@ -3,6 +3,7 @@ import {UserActionGroupTypes} from "./user/user-action-group-types";
 import {PlayerActionGroupTypes} from "./player/player-action-group-types";
 import {RingActionGroupTypes} from "./ring/ring-action-group-types";
 import {MoreStateActionGroupTypes} from "./more-state-action-group-types";
+import {ChildActionGroupTypes} from "./child/child-action-group-types";
 
 /**
  * These interfaces just override @ngrx/store/Action interface.
@@ -10,6 +11,10 @@ import {MoreStateActionGroupTypes} from "./more-state-action-group-types";
  */
 export interface UserActionWithGroupType extends Action{
   groupType: UserActionGroupTypes;
+}
+
+export interface ChildActionWithGroupType extends Action{
+  groupType: ChildActionGroupTypes;
 }
 
 export interface PlayerActionWithGroupType extends Action{

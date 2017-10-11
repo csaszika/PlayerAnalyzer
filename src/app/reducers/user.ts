@@ -2,15 +2,18 @@ import {User} from "../types/user";
 import * as user from '../actions/user/user';
 import {} from "./commands/factories/group-factories/ring-group-command-factory";
 import {UserGroupCommandFactory} from "./commands/factories/group-factories/user-group-command-factory";
+import * as fromChild from './child';
 
 export interface State {
   userList: User[];
   selected: User;
+  childState: fromChild.State;
 }
 
 export const initialState: State = {
   userList: [],
-  selected: null
+  selected: null,
+  childState: fromChild.initialState
 };
 
 /**
