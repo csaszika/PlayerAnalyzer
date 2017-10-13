@@ -1,37 +1,30 @@
 import {Action} from "@ngrx/store";
-import {UserActionGroupTypes} from "./user/user-action-group-types";
-import {PlayerActionGroupTypes} from "./player/player-action-group-types";
-import {RingActionGroupTypes} from "./ring/ring-action-group-types";
-import {MoreStateActionGroupTypes} from "./more-state-action-group-types";
-import {ChildActionGroupTypes} from "./child/child-action-group-types";
+import * as user from "../reducers/user";
+import * as player from "../reducers/player";
+import * as ring from "../reducers/ring";
+import * as child from "../reducers/child";
+import * as userActions from "./user/user";
+import * as playerActions from "./player/player";
+import * as childActions from "./child/child";
+import * as ringActions from "./ring/ring";
 
 /**
  * These interfaces just override @ngrx/store/Action interface.
  * The groupType field supports the separation in group factories.
  */
 export interface UserActionWithGroupType extends Action{
-  groupType: UserActionGroupTypes;
+  execute(state: user.State, action: userActions.Actions): user.State;
 }
 
 export interface ChildActionWithGroupType extends Action{
-  groupType: ChildActionGroupTypes;
+  execute(state: child.State, action: childActions.Actions): child.State;
 }
 
 export interface PlayerActionWithGroupType extends Action{
-  groupType: PlayerActionGroupTypes;
+  execute(state: player.State, action: playerActions.Actions): player.State;
 }
 
 export interface RingActionWithGroupType extends Action{
-  groupType: RingActionGroupTypes;
-}
-
-/**
- * Modify more State with one action.
- *
- * Perhaps useless. Please avoid the using of this group type.
- * Only use it when it is very necessary!
- */
-export interface MoreStateActionWithGroupType extends Action {
-  groupType: MoreStateActionGroupTypes;
+  execute(state: ring.State, action: ringActions.Actions): ring.State
 }
 

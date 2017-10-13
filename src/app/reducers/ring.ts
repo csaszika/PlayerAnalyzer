@@ -1,7 +1,6 @@
 import {Ring, RingId} from "../types/ring";
-import {createSelector} from "reselect";
 import * as ring from '../actions/ring/ring';
-import {RingGroupCommandFactory} from "./commands/factories/group-factories/ring-group-command-factory";
+import {GET_RINGS, RINGS_LOADED} from "../actions/ring/ring-action-types";
 
 export interface State {
   ringList: Ring[];
@@ -15,6 +14,19 @@ export const initialState: State = {
 
 export function reducer (state = initialState, action: ring.Actions) : State {
 
-  let command = RingGroupCommandFactory.getCommand(action);
-  return command.execute(state, action.payload);
+  //The commented rows don't work. FUCK
+  // Experience: getRingList selector's ring state is undefined
+  //
+  // if (action.type.indexOf("@ngrx/store/init") > -1) {
+  //   return state;
+  // }
+  // return action.execute(state, action);
+
+  switch (action.type) {
+    case RINGS_LOADED:
+    case GET_RINGS:
+      return action.execute(state, action);
+    default:
+      return state;
+  }
 }

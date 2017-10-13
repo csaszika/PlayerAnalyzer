@@ -4,7 +4,7 @@
   <!--</object>-->
 
 </div>
-<p-dataGrid [value]="rings" class="ring-dataGrid">
+<p-dataGrid [value]="rings$ | async" class="ring-dataGrid">
   <p-header>All NFL rings</p-header>
   <ng-template let-ring pTemplate="item">
     <div class="ui-g-12 ui-md-3 ring-grid">

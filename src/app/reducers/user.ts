@@ -1,8 +1,7 @@
 import {User} from "../types/user";
 import * as user from '../actions/user/user';
-import {} from "./commands/factories/group-factories/ring-group-command-factory";
-import {UserGroupCommandFactory} from "./commands/factories/group-factories/user-group-command-factory";
 import * as fromChild from './child';
+import {ADD_USER, DELETE_USER, USER_SELECTED, USERS_LOADED} from "../actions/user/user-action-types";
 
 export interface State {
   userList: User[];
@@ -30,6 +29,13 @@ export const initialState: State = {
  */
 export function reducer (state = initialState, action: user.Actions) : State {
 
-  let command = UserGroupCommandFactory.getCommand(action);
-  return command.execute(state, action.payload);
+  switch (action.type) {
+    case USERS_LOADED:
+    case USER_SELECTED:
+    case ADD_USER:
+    case DELETE_USER:
+      return action.execute(state, action);
+    default:
+      return state;
+  }
 }

@@ -3,9 +3,8 @@ import * as fromRing from './ring';
 import * as fromUser from './user';
 import * as fromChild from './child';
 import {environment} from '../../environments/environment';
-import {ActionReducer, ActionReducerMap, combineReducers, compose} from '@ngrx/store';
+import {ActionReducer, ActionReducerMap, combineReducers, compose, createSelector} from '@ngrx/store';
 import {storeFreeze} from 'ngrx-store-freeze';
-import {createSelector} from 'reselect';
 
 export interface State {
   player: fromPlayer.State;
@@ -37,7 +36,7 @@ export const getRingState = (state: State) => state.ring;
 
 export const getRingList = (state: State) => state.ring.ringList;
 export const getSelectedRingId = (state: State) => state.ring.selectedId;
-export const getSelectedRing = createSelector(getRingList,getSelectedRingId,
+export const getSelectedRing = (state: State) => createSelector(getRingList, getSelectedRingId,
   (ringList, selectedId) => ringList.find((ring) => ring.id === selectedId));
 
 //user

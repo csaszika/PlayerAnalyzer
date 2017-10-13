@@ -20,23 +20,11 @@ export const initialState: State = {
  */
 export function reducer (state = initialState, action: player.Actions) : State {
 
-  let {playerList, selectedId} = state;
-  let changed = false;
-
   switch (action.type) {
     case PLAYERS_LOADED:
-      const players = action.payload as Player[];
-      playerList = players;
-      changed = true;
-      break;
     case PLAYER_SELECTED:
-      selectedId = action.payload as PlayerId;
-      changed = true;
-      break;
+      return action.execute(state, action);
+    default:
+      return state;
   }
-
-  return changed ? {
-    playerList: playerList,
-    selectedId: selectedId
-  } : state;
 }
