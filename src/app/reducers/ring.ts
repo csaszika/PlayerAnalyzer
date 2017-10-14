@@ -1,6 +1,6 @@
 import {Ring, RingId} from "../types/ring";
 import * as ring from '../actions/ring/ring';
-import {GET_RINGS, RINGS_LOADED} from "../actions/ring/ring-action-types";
+import {RingActionsMap} from "../actions/ring/ring-actions-map";
 
 export interface State {
   ringList: Ring[];
@@ -14,7 +14,7 @@ export const initialState: State = {
 
 export function reducer (state = initialState, action: ring.Actions) : State {
 
-  //The commented rows don't work. FUCK
+  //The commented rows don't work. FUCK -y perhaps interesting
   // Experience: getRingList selector's ring state is undefined
   //
   // if (action.type.indexOf("@ngrx/store/init") > -1) {
@@ -22,11 +22,16 @@ export function reducer (state = initialState, action: ring.Actions) : State {
   // }
   // return action.execute(state, action);
 
-  switch (action.type) {
-    case RINGS_LOADED:
-    case GET_RINGS:
-      return action.execute(state, action);
-    default:
-      return state;
+  if (RingActionsMap.has(action.type)) {
+    return action.execute(state, action)
   }
+  return state;
+
+  // switch (action.type) {
+  //   case RINGS_LOADED:
+  //   // case GET_RINGS:
+  //     return action.execute(state, action);
+  //   default:
+  //     return state;
+  // }
 }

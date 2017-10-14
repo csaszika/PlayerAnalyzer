@@ -7,14 +7,14 @@ import {RingsLoaded} from "../actions/ring/ring";
 import {Http} from "@angular/http";
 import {Ring} from "../types/ring";
 import {toRoman} from 'roman-numerals';
-import {GET_RINGS} from "../actions/ring/ring-action-types";
+import {RingTypes} from "../actions/ring/ring-actions-map";
 
 @Injectable()
 export class RingEffects {
 
   @Effect()
   loadRingsEffect$ = this.actions$
-    .ofType(GET_RINGS)
+    .ofType(RingTypes.GET_RINGS)
     .switchMap(() =>
       this.http.get('assets/json/rings.json')
         .map(res => res.json())

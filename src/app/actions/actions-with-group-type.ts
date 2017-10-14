@@ -25,6 +25,6 @@ export interface PlayerActionWithGroupType extends Action{
 }
 
 export interface RingActionWithGroupType extends Action{
-  execute(state: ring.State, action: ringActions.Actions): ring.State
+  execute(state: ring.State, action: ringActions.Actions): ring.State;
 }
 

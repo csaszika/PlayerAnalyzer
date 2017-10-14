@@ -1,10 +1,10 @@
 import {Ring} from "../../types/ring";
-import {GET_RINGS, RINGS_LOADED} from "./ring-action-types";
 import {RingActionWithGroupType} from "../actions-with-group-type";
 import {State} from "../../reducers/ring";
+import {RingTypes} from "./ring-actions-map";
 
 export class GetRings implements RingActionWithGroupType {
-  readonly type = GET_RINGS;
+  readonly type = RingTypes.GET_RINGS;
 
   constructor(public payload: any = null) {}
 
@@ -15,7 +15,7 @@ export class GetRings implements RingActionWithGroupType {
 }
 
 export class RingsLoaded implements RingActionWithGroupType {
-  readonly type = RINGS_LOADED;
+  readonly type = RingTypes.RINGS_LOADED;
 
   constructor(public payload: Ring[]) {}
 
@@ -26,6 +26,7 @@ export class RingsLoaded implements RingActionWithGroupType {
     }
   }
 }
+
 
 export type Actions = GetRings
   | RingsLoaded;
