@@ -1,18 +1,15 @@
 import {User} from "../types/user";
 import * as user from '../actions/user/user';
-import * as fromChild from './child';
 import {ADD_USER, DELETE_USER, USER_SELECTED, USERS_LOADED} from "../actions/user/user-action-types";
 
 export interface State {
   userList: User[];
   selected: User;
-  childState: fromChild.State;
 }
 
 export const initialState: State = {
   userList: [],
   selected: null,
-  childState: fromChild.initialState
 };
 
 /**

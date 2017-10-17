@@ -1,7 +1,6 @@
 import * as fromPlayer from './player';
 import * as fromRing from './ring';
 import * as fromUser from './user';
-import * as fromChild from './child';
 import {environment} from '../../environments/environment';
 import {ActionReducer, ActionReducerMap, combineReducers, compose, createSelector} from '@ngrx/store';
 import {storeFreeze} from 'ngrx-store-freeze';
@@ -10,14 +9,12 @@ export interface State {
   player: fromPlayer.State;
   ring: fromRing.State;
   user: fromUser.State;
-  child: fromChild.State;
 }
 
 export const initialState: State = {
   player: fromPlayer.initialState,
   ring: fromRing.initialState,
-  user: fromUser.initialState,
-  child: fromChild.initialState
+  user: fromUser.initialState
 };
 
 //player
@@ -45,15 +42,11 @@ export const getUserState = (state: State) => state.user;
 export const getUserList = (state: State) => state.user.userList;
 export const getSelectedUser = (state: State) => state.user.selected;
 
-//child
-export const GetChildList = (state: State) => state.child.childList;
-
 //others
 export const reducers: ActionReducerMap<State> = {
   player: fromPlayer.reducer,
   ring: fromRing.reducer,
-  user: fromUser.reducer,
-  child: fromChild.reducer
+  user: fromUser.reducer
 };
 export const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
 export const productionReducer: ActionReducer<State> = combineReducers(reducers);

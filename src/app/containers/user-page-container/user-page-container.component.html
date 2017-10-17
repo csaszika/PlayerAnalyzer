@@ -30,10 +30,6 @@
     </div>
   </div>
 
-  <div>
-    <app-child [children]="childList$ | async"></app-child>
-  </div>
-
   <p-dialog header="User Details" [(visible)]="showDialog" [responsive]="true" showEffect="fade" [modal]="true">
     <div class="ui-grid ui-grid-responsive ui-fluid">
       <div class="ui-grid-row">

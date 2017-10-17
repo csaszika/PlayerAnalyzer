@@ -1,2 +1,0 @@
-export const GET_CHILDREN = 'GET_USERS';
-export const CHILDREN_LOADED = 'CHILDREN_LOADED';

@@ -13,7 +13,7 @@ import {
   ButtonModule, ChartModule, DataGridModule, DataTableModule, DialogModule, GrowlModule, MessagesModule,
   ScheduleModule
 } from "primeng/primeng";
-import {Actions, EffectsModule} from "@ngrx/effects";
+import {EffectsModule} from "@ngrx/effects";
 import {PlayerEffects} from "./effects/player-effects";
 import {RingEffects} from "./effects/ring-effects";
 import {AppRoutingModule} from "./app-routing.module";
@@ -22,8 +22,6 @@ import { UserPageContainerComponent } from './containers/user-page-container/use
 import {UserEffects} from "./effects/user-effects";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { UserEditComponent } from './components/user-edit/user-edit.component';
-import {ChildEffects} from "./effects/child-effects";
-import {ChildComponent} from "./components/child/child.component";
 
 @NgModule({
   declarations: [
@@ -33,8 +31,7 @@ import {ChildComponent} from "./components/child/child.component";
     UserPageContainerComponent,
     PageNotFoundComponent,
     UserPageContainerComponent,
-    UserEditComponent,
-    ChildComponent
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +50,7 @@ import {ChildComponent} from "./components/child/child.component";
     BrowserAnimationsModule,
     !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [],
     StoreModule.forRoot(reducers, {initialState}),
-    EffectsModule.forRoot([PlayerEffects, RingEffects, UserEffects, ChildEffects]),
+    EffectsModule.forRoot([PlayerEffects, RingEffects, UserEffects]),
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
