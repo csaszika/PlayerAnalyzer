@@ -19,7 +19,7 @@ export const initialState: State = {
  *
  * Advantages of this design:
  * 1. Hardly readable switch case in reducer is no more.
- * 2. State manipulation is separated into classes with the same structure.
+ * 2. FeatureState manipulation is separated into classes with the same structure.
  * 3. Easy to test.
  * 4. Easy to maintain.
  * 5. Easy to extend.

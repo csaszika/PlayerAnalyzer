@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {Store} from "@ngrx/store";
-import * as fromRoot from '../../reducers';
+import * as fromUser from '../../reducers/index';
 import {User} from "../../types/user";
 import {GetUsers, UserSelected} from "../../actions/user/user";
 
@@ -18,8 +18,12 @@ export class UserPageContainerComponent implements OnInit {
   selectedUser: User;
   users$: Observable<User[]>;
 
-  constructor(private store: Store<fromRoot.State>) {
-    this.users$ = this.store.select(fromRoot.getUserList);
+  constructor(private store: Store<fromUser.FeatureState>) {
+    this.users$ = this.store.select(fromUser.getUserList);
+    this.store.select(fromUser.getUserState).subscribe((state) => {
+      //this is the fucking problem for Zsolt
+      console.log(state);
+    });
   }
 
   ngOnInit() {

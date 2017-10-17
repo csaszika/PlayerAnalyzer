@@ -18,20 +18,17 @@ import {PlayerEffects} from "./effects/player-effects";
 import {RingEffects} from "./effects/ring-effects";
 import {AppRoutingModule} from "./app-routing.module";
 import {environment} from "../environments/environment";
-import { UserPageContainerComponent } from './containers/user-page-container/user-page-container.component';
-import {UserEffects} from "./effects/user-effects";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { UserEditComponent } from './components/user-edit/user-edit.component';
+import {UserModule} from "./user/user-module.module";
+import * as player from "./reducers/player";
+import * as ring from "./reducers/ring";
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayerPageContainerComponent,
     RingsPageContainerComponent,
-    UserPageContainerComponent,
-    PageNotFoundComponent,
-    UserPageContainerComponent,
-    UserEditComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +45,10 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     DataGridModule,
     DialogModule,
     BrowserAnimationsModule,
+    UserModule,
     !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [],
-    StoreModule.forRoot(reducers, {initialState}),
-    EffectsModule.forRoot([PlayerEffects, RingEffects, UserEffects]),
+    StoreModule.forRoot({player: player.reducer, ring: ring.reducer}),
+    EffectsModule.forRoot([PlayerEffects, RingEffects]),
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

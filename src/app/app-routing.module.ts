@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {PlayerPageContainerComponent} from "./containers/player-page-container/player-page-container.component";
 import {PageNotFoundComponent} from "./containers/page-not-found";
 import {RingsPageContainerComponent} from "./containers/rings-page-container/rings-page-container.component";
-import {UserPageContainerComponent} from "./containers/user-page-container/user-page-container.component";
+import {UserPageContainerComponent} from "./user/containers/user-page-container/user-page-container.component";
 
 const routes: Routes = [
   {
