@@ -5,7 +5,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
-import {reducers, initialState} from './reducers';
 import {PlayerPageContainerComponent} from './containers/player-page-container/player-page-container.component';
 import {RingsPageContainerComponent} from "./containers/rings-page-container/rings-page-container.component";
 import {PageNotFoundComponent} from "./containers/page-not-found";
@@ -16,12 +15,13 @@ import {
 import {EffectsModule} from "@ngrx/effects";
 import {PlayerEffects} from "./effects/player-effects";
 import {RingEffects} from "./effects/ring-effects";
-import {AppRoutingModule} from "./app-routing.module";
+import {routes} from "./app-routing.module";
 import {environment} from "../environments/environment";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {UserModule} from "./user/user-module.module";
 import * as player from "./reducers/player";
 import * as ring from "./reducers/ring";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -35,7 +35,6 @@ import * as ring from "./reducers/ring";
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule,
     DataTableModule,
     ChartModule,
     MessagesModule,
@@ -47,12 +46,14 @@ import * as ring from "./reducers/ring";
     BrowserAnimationsModule,
     UserModule,
     !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [],
+    RouterModule.forRoot(routes, { enableTracing: false }),
     StoreModule.forRoot({player: player.reducer, ring: ring.reducer}),
     EffectsModule.forRoot([PlayerEffects, RingEffects]),
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
 export class AppModule {
 }

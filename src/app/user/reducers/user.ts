@@ -1,13 +1,15 @@
 import {User} from "../types/user";
 import * as user from '../actions/user/user';
 import {ADD_USER, DELETE_USER, USER_SELECTED, USERS_LOADED} from "../actions/user/user-action-types";
+import {ActionReducerMap, createFeatureSelector, createSelector} from "@ngrx/store";
+import * as fromRoot from '../../reducers';
 
-export interface State {
+export interface UserState {
   userList: User[];
   selected: User;
 }
 
-export const initialState: State = {
+export const initialState: UserState = {
   userList: [],
   selected: null,
 };
@@ -24,7 +26,7 @@ export const initialState: State = {
  * 4. Easy to maintain.
  * 5. Easy to extend.
  */
-export function reducer (state = initialState, action: user.Actions) : State {
+export function reducer (state: UserState = initialState, action: user.Actions) : UserState {
 
   switch (action.type) {
     case USERS_LOADED:
@@ -36,3 +38,10 @@ export function reducer (state = initialState, action: user.Actions) : State {
       return state;
   }
 }
+
+export const USER_STATE: string = 'user';
+
+export const getUserState = createFeatureSelector<UserState>(USER_STATE);
+
+export const getUserList = createSelector(getUserState,
+  (state: UserState) => state.userList);

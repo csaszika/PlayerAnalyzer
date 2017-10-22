@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {Store} from "@ngrx/store";
-import * as fromUser from '../../reducers/index';
+import * as fromUser from '../../reducers/user';
 import {User} from "../../types/user";
 import {GetUsers, UserSelected} from "../../actions/user/user";
 
@@ -18,12 +18,8 @@ export class UserPageContainerComponent implements OnInit {
   selectedUser: User;
   users$: Observable<User[]>;
 
-  constructor(private store: Store<fromUser.FeatureState>) {
+  constructor(private store: Store<fromUser.UserState>) {
     this.users$ = this.store.select(fromUser.getUserList);
-    this.store.select(fromUser.getUserState).subscribe((state) => {
-      //this is the fucking problem for Zsolt
-      console.log(state);
-    });
   }
 
   ngOnInit() {
@@ -32,7 +28,7 @@ export class UserPageContainerComponent implements OnInit {
     this.selectedUser = null;
   }
 
-  save() {
+  onSaveEditedUser() {
     // this.store.dispatch(new AddUser(this.newUser));
     this.showDialog = false;
   }
