@@ -39,7 +39,6 @@
     "moment": "^2.18.1",
     "ngrx-store-freeze": "^0.1.9",
     "primeng": "^4.1.0",
-    "reselect": "^3.0.1",
     "roman-numerals": "^0.3.2",
     "rxjs": "^5.4.3",
     "zone.js": "^0.8.4"

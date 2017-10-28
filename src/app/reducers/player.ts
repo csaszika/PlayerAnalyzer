@@ -1,5 +1,4 @@
 import {Player, PlayerId} from "../types/player";
-import {createSelector} from "reselect";
 import * as player from '../actions/player/player';
 import {PLAYER_SELECTED, PLAYERS_LOADED} from "../actions/player/player-action-types";
 
