@@ -26,6 +26,9 @@ export class UserPageContainerComponent implements OnInit {
     this.store.dispatch(new GetUsers());
     this.saveButtonEnabled = false;
     this.selectedUser = null;
+    this.users$.subscribe(users => {
+      console.log(users);
+    })
   }
 
   onSaveEditedUser() {
